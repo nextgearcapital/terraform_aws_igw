@@ -1,10 +1,10 @@
-variable "vpc_id" { }
-variable "name" { }
-variable "environment" { }
-variable "team" { }
+variable "vpc_id" {}
+variable "name" {}
+variable "environment" {}
+variable "team" {}
 
 resource "aws_internet_gateway" "igw" {
-  vpc_id = "${aws_vpc.igw.id}"
+  vpc_id = "${var.vpc_id}"
 
   tags {
     Name        = "${var.name}-igw"
